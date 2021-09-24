@@ -1,0 +1,13 @@
+.radio_btn {
+  transform: scale(2);
+}
+#progressBar {
+  width: 20rem;
+  height: 4rem;
+  border: 0.3rem solid blue;
+}
+#progress-bar-full {
+  height: 3.4rem;
+  background-color: pink;
+  width: 0%;
+}

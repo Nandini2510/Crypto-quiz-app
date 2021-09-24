@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import quizData from "./api/crypto-quiz-api";
+import { useState } from "react";
+import Quiz from "./Components/Quiz";
+import QuizEnd from "./Components/Quiz-End";
 
 function App() {
+  const [step, setStep] = useState(2);
+  const [activeQuestion, setActiveQuestion] = useState(0);
+  const [answers, setAnswers] = useState([]);
+
+  const resetClickHandler = () => {
+    setActiveQuestion(0);
+    setAnswers([]);
+    setStep(2);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex justify-center">
+      {step === 2 && (
+        <Quiz
+          data={quizData[activeQuestion]}
+          onAnswerUpdate={setAnswers}
+          numberOfQuestions={quizData.length}
+          activeQuestion={activeQuestion}
+          onSetActiveQuestion={setActiveQuestion}
+          onSetStep={setStep}
+        />
+      )}
+      {step === 3 && (
+        <QuizEnd
+          results={answers}
+          data={quizData}
+          onReset={resetClickHandler}
+        />
+      )}
     </div>
   );
 }
