@@ -2,6 +2,9 @@ import React, { useState, useEffect, useRef } from "react";
 import "../styles.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import CryptoBg1 from "../assets/cryptobg1.jpeg";
+import CryptoBg2 from "../assets/cryptobg2.jpeg";
+import CryptoBg3 from "../assets/cryptobg3.jpeg";
 
 const Quiz = ({
   data,
@@ -15,6 +18,8 @@ const Quiz = ({
   const [error, setError] = useState("");
 
   const radiosWrapper = useRef();
+  const progressbarfull = document.getElementById("progress-bar-full");
+  let counter = 0;
 
   useEffect(() => {
     const findCheckedInput =
@@ -49,8 +54,9 @@ const Quiz = ({
     setSelected("");
     if (activeQuestion < numberOfQuestions - 1) {
       onSetActiveQuestion(activeQuestion + 1);
+      counter = counter + 1;
 
-      //   progressbarfull.style.width = `${(counter / numberOfQuestions) * 100}%`;
+      // progressbarfull.style.width = `${(counter / numberOfQuestions) * 100}%`;
     } else {
       onSetStep(3);
     }
@@ -58,8 +64,12 @@ const Quiz = ({
 
   return (
     <>
-      <div className="w-7/12 p-7 flex flex-col rounded-md justify-center items-center mt-36 shadow-md bg-indigo-900">
+      <div className="w-6/12 h-3/5 p-16 flex flex-col rounded-lg justify-center items-center mt-10 shadow-md quizbg">
         <div>
+          {/* <div className="flex">
+            <img src={CryptoBg1} />
+          </div> */}
+
           <div className="content flex flex-col justify-center items-center">
             <h1 className="font-serif text-white text-3xl p-4 text-center block">
               Question {activeQuestion + 1}/{numberOfQuestions}
@@ -68,11 +78,11 @@ const Quiz = ({
               <div id="progress-bar-full"></div>
             </div> */}
 
-            <h2 className="mb-5 text-white text-lg">{data.question}</h2>
+            <h2 className="block mb-5 text-white text-lg">{data.question}</h2>
             <div className="grid" ref={radiosWrapper}>
               {data.options.map((item, key) => (
                 <label
-                  className=" radio has-background-light flex p-4 px-36 rounded-full border-2  my-2 font-600 border-purple-300"
+                  className=" radio has-background-light flex p-4 px-32 rounded-3xl border-2  my-2 font-600 border-purple-300"
                   key={key}
                 >
                   <input
