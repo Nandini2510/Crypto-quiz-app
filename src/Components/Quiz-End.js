@@ -16,9 +16,9 @@ const End = ({ results, data, onReset }) => {
   }, []);
 
   return (
-    <div className="w-4/12 h-80 p-7 flex flex-col rounded-md justify-center items-center mt-40 shadow-md quizbg">
-      <div className="m-4">
-        <div className="m-5">
+    <div className="min-h-screen w-full max-w-sm">
+      <div className="h-full overflow-y-scroll mt-48 max-w-md max-h-3xl m-auto p-6 flex flex-col sm:rounded-xl items-center  shadow-md quizbg">
+        <div className="sm:m-2 flex-1 flex flex-col justify-between items-center">
           <h3 className="text-white text-3xl text-center">Your Score:</h3>
           <p className="text-white text-3xl text-center">
             {correctAnswers} / {data.length}
