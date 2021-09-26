@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "../styles.css";
 
 const End = ({ results, data, onReset }) => {
   const [correctAnswers, setCorrectAnswers] = useState(0);
@@ -15,7 +16,7 @@ const End = ({ results, data, onReset }) => {
   }, []);
 
   return (
-    <div className="w-4/12 h-80 p-7 flex flex-col rounded-md justify-center items-center mt-40 shadow-md bg-indigo-900">
+    <div className="w-4/12 h-80 p-7 flex flex-col rounded-md justify-center items-center mt-40 shadow-md quizbg">
       <div className="m-4">
         <div className="m-5">
           <h3 className="text-white text-3xl text-center">Your Score:</h3>

@@ -120,7 +120,7 @@ const quizData = [
     //   D: "Script kiddie",
     // },
 
-    correct: "Certificate authority",
+    correct: "Public key infrastructure",
   },
   {
     key: "5",
@@ -155,7 +155,7 @@ const quizData = [
       },
     ],
 
-    correct: "Blowfish",
+    correct: "Public key infrastructure",
   },
 ];
 export default quizData;

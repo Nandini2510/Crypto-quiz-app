@@ -1,7 +1,8 @@
 .radio_btn {
-  transform: scale(2);
+  transform: scale(1.5);
 }
-#progressBar {
+
+/* #progressBar {
   width: 20rem;
   height: 4rem;
   border: 0.3rem solid blue;
@@ -10,7 +11,43 @@
   height: 3.4rem;
   background-color: pink;
   width: 0%;
-}
+} */
 .quizbg {
   background: #281a5e;
 }
+#quiz-bg {
+  background-image: url("./assets/cryptobg2.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+@media (min-width: 768px) {
+  .radio_btn {
+    transform: scale(2);
+  }
+}
+/* @media (max-width: 900px) {
+  .quizbg {
+    max-width: 50%;
+    width: 82vw;
+
+    margin: 1rem;
+  }
+  .content {
+    min-width: 50%;
+    width: 50vw;
+    min-height: 80%;
+
+    margin: 2rem;
+  }
+  .options {
+    width: 100%;
+  }
+  .label {
+  }
+  .btn {
+    display: block;
+    margin: 1rem;
+    padding: 1rem;
+  }
+} */

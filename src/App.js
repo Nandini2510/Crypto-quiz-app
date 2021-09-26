@@ -17,7 +17,10 @@ function App() {
   };
 
   return (
-    <div className="flex justify-center header">
+    <div
+      className="flex justify-center w-screen items-center text-xs sm:text-sm"
+      id="quiz-bg"
+    >
       {step === 2 && (
         <Quiz
           data={quizData[activeQuestion]}
